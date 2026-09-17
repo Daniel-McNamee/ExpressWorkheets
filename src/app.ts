@@ -4,7 +4,9 @@ import carRoutes from './routes/cars';
 const PORT = process.env.PORT || 4545;
 const app: Application = express();
 
+app.use(express.json());
 app.use('/api/v1/cars', carRoutes);
+
 
 app.get("/ping", async (_req : Request, res: Response) => {
     res.json({
